@@ -1,30 +1,15 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { getShowByID } from "../api/tvmaze";
-
-const useShowID = (showid) => {
-  const [showData, setShowData] = useState(null);
-  const [showError, setShowError] = useState(null);
-
-  useEffect(() => {
-    async function fetchdata() {
-      try {
-        const data = await getShowByID(showid);
-        setShowData(data);
-      } catch (error) {
-        setShowError(error);
-      }
-    }
-    fetchdata();
-  }, [showid]);
-
-  return { showData, showError };
-};
+import { useQuery } from "@tanstack/react-query";
 
 const Show = () => {
   const { showid } = useParams();
 
-  const { showData, showError } = useShowID(showid);
+  const {data:showData,error:showError} = useQuery({
+    queryKey: ["show", showid],
+    queryFn: () => getShowByID(showid),
+  });
+
 
   if (showError) {
     return <div>We have an error:{showError}</div>;
