@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./components/MainLayout";
 import Home from "./pages/home";
 import Starred from "./pages/starred";
+import Show from "./pages/show";
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
         </Route>
 
         <Route path="*" element={<div>Not found</div>} />
+
+        <Route path="/show/:showid" element = {<Show />} ></Route>
+
+
         {/* <Route path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route path="teams" element={<Teams />}>

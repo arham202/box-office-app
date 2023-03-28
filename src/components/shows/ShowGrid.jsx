@@ -4,7 +4,7 @@ const ShowGrid = ({ shows }) => {
   return (
     <div>
       {shows.map((data) => (
-        <div>
+        <div key={data.show.id}>
           <ShowCard
             key={data.show.id}
             id = {data.show.id}

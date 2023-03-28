@@ -4,7 +4,7 @@ const ActorGrid = ({actor}) => {
   return (
     <div>
       {actor.map((data) => (
-        <div>
+        <div key={data.person.id}>
           <ActorCard
             key={data.person.id}
             name={data.person.name}
