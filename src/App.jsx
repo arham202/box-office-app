@@ -1,15 +1,19 @@
-import {BrowserRouter , Routes, Route} from 'react-router-dom'
-import Home from './pages/home';
-import Starred from './pages/starred';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./components/MainLayout";
+import Home from "./pages/home";
+import Starred from "./pages/starred";
 
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element = {<Home/>}/>
-      <Route path="/starred" element = {<Starred/>}/>
-      <Route path="*" element= {<div>Not found</div>}/>
-      {/* <Route path="/" element={<App />}>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/starred" element={<Starred />} />
+        </Route>
+
+        <Route path="*" element={<div>Not found</div>} />
+        {/* <Route path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route path="teams" element={<Teams />}>
           <Route path=":teamId" element={<Team />} />
@@ -22,8 +26,8 @@ function App() {
         <Route path="/tos" element={<Tos />} />
       </Route>
       <Route path="contact-us" element={<Contact />} /> */}
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
