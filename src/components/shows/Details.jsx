@@ -2,9 +2,9 @@ const Details = ({ status, premiered, network }) => {
   return (
     <div>
       <p>Status:{status}</p>
-      <p>
+      {/* <p>
         Premiered: {premiered} {!!network && `on ${network.name}`}
-      </p>
+      </p> */}
     </div>
   );
 };

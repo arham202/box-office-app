@@ -7,16 +7,17 @@ import Seasons from "../components/shows/Seasons";
 import Cast from "../components/shows/Cast";
 
 const Show = () => {
-  const { showid } = useParams();
 
-  const { data: showData, error: showError } = useQuery({
-    queryKey: ["show", showid],
+  const { showid } = useParams();
+  const { data: showData, error} = useQuery({
+    queryKey: ['show', showid],
     queryFn: () => getShowByID(showid),
     refetchOnWindowFocus: false,
   });
 
-  if (showError) {
-    return <div>We have an error:{showError}</div>;
+  if (error) {
+    console.log("Error has been caught");
+    return <div>We have an error: {error.message}</div>;
   }
 
   if (showData) {
@@ -49,7 +50,8 @@ const Show = () => {
     );
   }
 
-  return <div>Data is Loading.....</div>;
+  return <div>Data is Loading</div>;
+
 };
 
 export default Show;
