@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState} from "react";
 import { searchForShows, searchForPeople } from "../api/tvmaze";
 import ActorGrid from "../components/actors/ActorGrid";
 import SearchForm from "../components/SearchForm";
