@@ -4,7 +4,7 @@ import styled from "styled-components";
 const LINKS = [
   {
     text: "Home",
-    to: "/",
+    to: "/box-office-app",
   },
   {
     text: "Starred",

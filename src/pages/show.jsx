@@ -26,7 +26,7 @@ const Show = () => {
     return (
         <div>
         <BackHomeWrapper>
-        <Link to="/">Go back to home</Link>
+        <Link to="/box-office-app">Go back to home</Link>
         </BackHomeWrapper>
 
         <ShowPageWrapper>

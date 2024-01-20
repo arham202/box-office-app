@@ -19,13 +19,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/box-office-app/" element={<Home />} />
-          <Route path="/box-office-app/starred" element={<Starred />} />
+          <Route path="/box-office-app" element={<Home />} />
+          <Route path="/starred" element={<Starred />} />
         </Route>
 
         <Route path="*" element={<div>Not found</div>} />
 
-        <Route path="/box-office-app/show/:showid" element = {<Show />} ></Route>
+        <Route path="/show/:showid" element = {<Show />} ></Route>
       </Routes>
     </BrowserRouter>
     </GlobalTheme>
